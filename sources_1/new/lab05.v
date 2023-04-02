@@ -11,7 +11,8 @@ module lab05(
         .AN(AN),
         .HEX(HEX)
     );
-    initial
-        number = 123;
-    
+    initial begin
+        number = 253;
+        
+    end
 endmodule
