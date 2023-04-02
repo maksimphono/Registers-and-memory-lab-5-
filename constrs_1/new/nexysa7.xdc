@@ -37,6 +37,7 @@ set_property -dict { PACKAGE_PIN J15 IOSTANDARD LVCMOS33 } [get_ports { is199 }]
 # SWITCHES
 set_property -dict { PACKAGE_PIN U11 IOSTANDARD LVCMOS33 } [get_ports { input_mode[0] }];
 set_property -dict { PACKAGE_PIN U12 IOSTANDARD LVCMOS33 } [get_ports { input_mode[1] }];
+set_property -dict { PACKAGE_PIN L16 IOSTANDARD LVCMOS33 } [get_ports { read_mode }];
 
 # BUTTONS
 set_property -dict { PACKAGE_PIN M18 IOSTANDARD LVCMOS33 } [get_ports { buttons[4] }];
