@@ -32,5 +32,15 @@ set_property -dict { PACKAGE_PIN T11 IOSTANDARD LVCMOS33 } [get_ports { HEX[5] }
 set_property -dict { PACKAGE_PIN L18 IOSTANDARD LVCMOS33 } [get_ports { HEX[6] }];
 
 # 1 - bit LED
+set_property -dict { PACKAGE_PIN J15 IOSTANDARD LVCMOS33 } [get_ports { is199 }];
 
 # SWITCHES
+set_property -dict { PACKAGE_PIN U11 IOSTANDARD LVCMOS33 } [get_ports { input_mode[0] }];
+set_property -dict { PACKAGE_PIN U12 IOSTANDARD LVCMOS33 } [get_ports { input_mode[1] }];
+
+# BUTTONS
+set_property -dict { PACKAGE_PIN M18 IOSTANDARD LVCMOS33 } [get_ports { buttons[4] }];
+set_property -dict { PACKAGE_PIN P17 IOSTANDARD LVCMOS33 } [get_ports { buttons[3] }];
+set_property -dict { PACKAGE_PIN N17 IOSTANDARD LVCMOS33 } [get_ports { buttons[2] }];
+set_property -dict { PACKAGE_PIN M17 IOSTANDARD LVCMOS33 } [get_ports { buttons[1] }];
+set_property -dict { PACKAGE_PIN P18 IOSTANDARD LVCMOS33 } [get_ports { buttons[0] }];

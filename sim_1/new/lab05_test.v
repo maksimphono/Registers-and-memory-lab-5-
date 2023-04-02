@@ -22,10 +22,26 @@
 
 module lab05_test(
     );
-    reg [7:0] number;
+    wire [7:0] number;
     reg clk;
-    reg [7:0] AN;
-    reg [6:0] HEX;
+    reg [4:0] buttons;
+    reg [1:0] input_mode;
+    wire [7:0] AN;
+    wire [6:0] HEX;
+    
+    lab05 l1(
+        .clk(clk),
+        .buttons(buttons),
+        .input_mode(input_mode),
+        .AN(AN),
+        .HEX(HEX)
+    );
+    /*
+    input_int ii1(
+        .buttons(buttons),
+        .input_mode(input_mode),
+        .out_number(number)
+    );
     
     putint pi1(
         .intnum(number),
@@ -33,11 +49,18 @@ module lab05_test(
         .AN(AN),
         .HEX(HEX)
     );
-    
+    */
     initial begin
         clk = 0;
-        number = 23;
-        forever
-            clk = ~clk;
+        input_mode = 1;
+        
+        //buttons = 5'b00000; #10;
+        buttons = 5'b10000; #10;
+        forever begin
+            
+            clk = ~clk; #10;
+        end
+        
+        
     end
 endmodule
