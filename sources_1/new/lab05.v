@@ -4,6 +4,7 @@ module lab05(
     input [1:0] input_mode,
     input read_mode,
     input [3:0] addr,
+    output [4:0] LED,
     output [7:0] AN,
     output [6:0] HEX,
     output is199
@@ -16,6 +17,12 @@ module lab05(
     reg enable_input;
     reg load;
     wire [7:0] value_on_led;
+    
+    leds_with_switches lws(
+        .read_mode(read_mode),
+        .SW(addr),
+        .LED(LED)
+    );
     
     register_16x8 rg1(
         .load(load),

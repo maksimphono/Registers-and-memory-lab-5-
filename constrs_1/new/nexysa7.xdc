@@ -1,4 +1,6 @@
 set_property CLOCK_DEDICATED_ROUTE FALSE [get_nets read_mode_IBUF];
+set_property CLOCK_DEDICATED_ROUTE FALSE [get_nets LED_OBUF[0]];
+
 set_property ALLOW_COMBINATORIAL_LOOPS TRUE [get_nets <HEX_OBUF[6]_inst_i_11_n_0> ]
 set_property ALLOW_COMBINATORIAL_LOOPS TRUE [get_nets <HEX_OBUF[6]_inst_i_2_n_0> ]
 set_property ALLOW_COMBINATORIAL_LOOPS_TRUE [get_nets <counter0[0]> ]
@@ -33,6 +35,13 @@ set_property -dict { PACKAGE_PIN L18 IOSTANDARD LVCMOS33 } [get_ports { HEX[6] }
 
 # 1 - bit LED
 set_property -dict { PACKAGE_PIN J15 IOSTANDARD LVCMOS33 } [get_ports { is199 }];
+
+set_property -dict { PACKAGE_PIN K15 IOSTANDARD LVCMOS33 } [get_ports { LED[0] }];
+set_property -dict { PACKAGE_PIN J13 IOSTANDARD LVCMOS33 } [get_ports { LED[1] }];
+set_property -dict { PACKAGE_PIN N14 IOSTANDARD LVCMOS33 } [get_ports { LED[2] }];
+set_property -dict { PACKAGE_PIN R18 IOSTANDARD LVCMOS33 } [get_ports { LED[3] }];
+set_property -dict { PACKAGE_PIN V17 IOSTANDARD LVCMOS33 } [get_ports { LED[4] }];
+
 
 # SWITCHES
 set_property -dict { PACKAGE_PIN U11 IOSTANDARD LVCMOS33 } [get_ports { input_mode[0] }];
