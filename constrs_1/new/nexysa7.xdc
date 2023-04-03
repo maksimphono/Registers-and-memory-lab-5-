@@ -34,8 +34,6 @@ set_property -dict { PACKAGE_PIN T11 IOSTANDARD LVCMOS33 } [get_ports { HEX[5] }
 set_property -dict { PACKAGE_PIN L18 IOSTANDARD LVCMOS33 } [get_ports { HEX[6] }];
 
 # 1 - bit LED
-set_property -dict { PACKAGE_PIN J15 IOSTANDARD LVCMOS33 } [get_ports { is199 }];
-
 set_property -dict { PACKAGE_PIN K15 IOSTANDARD LVCMOS33 } [get_ports { LED[0] }];
 set_property -dict { PACKAGE_PIN J13 IOSTANDARD LVCMOS33 } [get_ports { LED[1] }];
 set_property -dict { PACKAGE_PIN N14 IOSTANDARD LVCMOS33 } [get_ports { LED[2] }];

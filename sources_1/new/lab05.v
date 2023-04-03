@@ -6,13 +6,10 @@ module lab05(
     input [3:0] addr,
     output [4:0] LED,
     output [7:0] AN,
-    output [6:0] HEX,
-    output is199
+    output [6:0] HEX
 );
-    wire [7:0] number, register_data;
+    wire [7:0] number, mem_data;
     reg clr;
-    reg [7:0] data;
-    wire submit;
     reg en_register;
     reg enable_input;
     reg load;
@@ -23,23 +20,12 @@ module lab05(
         .SW(addr),
         .LED(LED)
     );
-    /*
-    register_16x8 rg1(
-        .load(load),
-        .clk(clk),
-        .clr(clr),
-        .read_mode(read_mode),
-        .data(number),
-        .addr(addr),
-        .out(register_data)
-    );
-    */
     
    blk_mem_gen_0 ram_1(
         .addra(addr),
         .clka(clk),
         .dina(number),
-        .douta(register_data),
+        .douta(mem_data),
         .ena(1'b1),
         .wea(load)
    );
@@ -59,13 +45,14 @@ module lab05(
         .AN(AN),
         .HEX(HEX)
     );
-    //assign register_data = 234;
-    assign value_on_led = (read_mode)?register_data:number;
+
+    assign value_on_led = (read_mode)?mem_data:number;
+
     initial begin
-        //number = 1;
         clr = 0;
-        enable_input = 1'b0;
+        enable_input = 1'b1;
         en_register = 1'b1;
+        load = 0;
     end
     
     always @ (*) begin

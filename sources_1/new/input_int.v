@@ -17,6 +17,7 @@ module input_int(
     end
     
     always @ (posedge clk) begin
+        if (en) begin
         if (counter == max_counter) begin
             if (input_mode == 2'b00) begin
                 case (buttons)
@@ -44,11 +45,11 @@ module input_int(
                 endcase
             end
         end
-        if (en || counter == max_counter) counter = 0;
+        if (counter == max_counter) counter = 0;
         else counter = counter + 1;
         
-        //if (return_value > 0) out_number <= return_value;
         out_number <= number;
+        end
     end
     
 endmodule
