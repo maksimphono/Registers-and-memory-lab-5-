@@ -39,6 +39,11 @@ set_property -dict { PACKAGE_PIN U11 IOSTANDARD LVCMOS33 } [get_ports { input_mo
 set_property -dict { PACKAGE_PIN U12 IOSTANDARD LVCMOS33 } [get_ports { input_mode[1] }];
 set_property -dict { PACKAGE_PIN L16 IOSTANDARD LVCMOS33 } [get_ports { read_mode }];
 
+set_property -dict { PACKAGE_PIN M13 IOSTANDARD LVCMOS33 } [get_ports { addr[0] }];
+set_property -dict { PACKAGE_PIN R15 IOSTANDARD LVCMOS33 } [get_ports { addr[1]}];
+set_property -dict { PACKAGE_PIN R17 IOSTANDARD LVCMOS33 } [get_ports { addr[2] }];
+set_property -dict { PACKAGE_PIN T18 IOSTANDARD LVCMOS33 } [get_ports { addr[3] }];
+
 # BUTTONS
 set_property -dict { PACKAGE_PIN M18 IOSTANDARD LVCMOS33 } [get_ports { buttons[4] }];
 set_property -dict { PACKAGE_PIN P17 IOSTANDARD LVCMOS33 } [get_ports { buttons[3] }];
