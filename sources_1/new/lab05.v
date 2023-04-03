@@ -23,7 +23,7 @@ module lab05(
         .SW(addr),
         .LED(LED)
     );
-    
+    /*
     register_16x8 rg1(
         .load(load),
         .clk(clk),
@@ -33,6 +33,16 @@ module lab05(
         .addr(addr),
         .out(register_data)
     );
+    */
+    
+   blk_mem_gen_0 ram_1(
+        .addra(addr),
+        .clka(clk),
+        .dina(number),
+        .douta(register_data),
+        .ena(1'b1),
+        .wea(load)
+   );
     
     input_int ii1(
         .clk(clk),
