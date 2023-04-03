@@ -14,14 +14,15 @@ module lab05(
     wire submit;
     reg en_register;
     reg enable_input;
+    reg load;
     wire [7:0] value_on_led;
     
     register_16x8 rg1(
-        .en_register(en_register),
+        .load(load),
         .clk(clk),
         .clr(clr),
         .read_mode(read_mode),
-        .data(data),
+        .data(number),
         .addr(addr),
         .out(register_data)
     );
@@ -41,15 +42,20 @@ module lab05(
         .AN(AN),
         .HEX(HEX)
     );
-    assign register_data = 234;
-    assign value_on_led = (read_mode)?register_data:(8'd0 | addr);
+    //assign register_data = 234;
+    assign value_on_led = (read_mode)?register_data:number;
     initial begin
         //number = 1;
         clr = 0;
         enable_input = 1'b0;
+        en_register = 1'b1;
     end
     
     always @ (*) begin
-    
+        if (input_mode == 2'b11 && buttons == 5'b00100 && read_mode == 1'b0) begin
+            load = 1;
+        end else begin
+            load = 0;
+        end
     end
 endmodule

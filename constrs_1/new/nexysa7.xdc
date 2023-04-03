@@ -1,4 +1,4 @@
-#set_property CLOCK_DEDICATED_ROUTE FALSE [get_nets en_IBUF];
+set_property CLOCK_DEDICATED_ROUTE FALSE [get_nets read_mode_IBUF];
 set_property ALLOW_COMBINATORIAL_LOOPS TRUE [get_nets <HEX_OBUF[6]_inst_i_11_n_0> ]
 set_property ALLOW_COMBINATORIAL_LOOPS TRUE [get_nets <HEX_OBUF[6]_inst_i_2_n_0> ]
 set_property ALLOW_COMBINATORIAL_LOOPS_TRUE [get_nets <counter0[0]> ]
