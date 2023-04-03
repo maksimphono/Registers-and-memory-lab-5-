@@ -6,8 +6,7 @@ module lab05(
     input [3:0] addr,
     output [4:0] LED,
     output [7:0] AN,
-    output [6:0] HEX,
-    output is199
+    output [6:0] HEX
 );
     wire [7:0] number, register_data;
     reg clr;
@@ -36,7 +35,6 @@ module lab05(
     
     input_int ii1(
         .clk(clk),
-        .en(enable_input),
         .buttons(buttons),
         .input_mode(input_mode),
         .out_number(number)
@@ -49,10 +47,8 @@ module lab05(
         .AN(AN),
         .HEX(HEX)
     );
-    //assign register_data = 234;
     assign value_on_led = (read_mode)?register_data:number;
     initial begin
-        //number = 1;
         clr = 0;
         enable_input = 1'b0;
         en_register = 1'b1;

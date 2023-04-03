@@ -9,8 +9,8 @@ module register_16x8(
     reg [7:0] local_memory [15:0];
     
     initial begin
-        //$readmemh("C:/Users/Administrator/Desktop/lab05/lab05.srcs/data/mem1.txt", local_memory, 0, 15);
-        $readmemh("D:/data/mem1.txt", local_memory, 0, 15);
+        $readmemh("C:/Users/Administrator/Desktop/lab05/lab05.srcs/data/mem1.txt", local_memory, 0, 15);
+        //$readmemh("D:/data/mem1.txt", local_memory, 0, 15);
     end
     
     always @ (read_mode or addr) begin
@@ -28,6 +28,4 @@ module register_16x8(
         end
         
     end
-    
-    //assign out = local_memory[addr];
 endmodule

@@ -41,8 +41,7 @@ module putint(input [7:0] intnum, input clk, output reg [7:0] AN, output [6:0] H
         number = 4'd0;
     end
     
-    always @ (posedge clk) begin // clk -> posedge clk, remove intnum
-        //number = 4'd0;
+    always @ (posedge clk) begin
         case (counter)
             (render_first_digit): begin
                 temp = intnum / 8'd100;

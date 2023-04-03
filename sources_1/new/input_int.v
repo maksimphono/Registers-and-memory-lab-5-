@@ -1,6 +1,5 @@
 module input_int(
     input clk,
-    input en,
     input [4:0] buttons,
     input [1:0] input_mode,
     output reg [7:0] out_number
@@ -44,10 +43,9 @@ module input_int(
                 endcase
             end
         end
-        if (en || counter == max_counter) counter = 0;
+        if (counter == max_counter) counter = 0;
         else counter = counter + 1;
-        
-        //if (return_value > 0) out_number <= return_value;
+
         out_number <= number;
     end
     
